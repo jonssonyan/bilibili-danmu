@@ -1,8 +1,7 @@
 import _thread
 import time
-import tkinter
-from tkinter import END
-from tkinter.ttk import Frame
+import tkinter.simpledialog
+from tkinter import END, simpledialog, messagebox
 
 import requests
 
@@ -60,9 +59,9 @@ class Danmu():
             msg = ''
 
 
-def bilibili(threadName, delay):
+def bilibili(delay, room_id):
     # 创建bDanmu实例
-    bDanmu = Danmu('1017')
+    bDanmu = Danmu(room_id)
     while True:
         # 暂停防止cpu占用过高
         time.sleep(delay)
@@ -70,12 +69,20 @@ def bilibili(threadName, delay):
         bDanmu.get_danmu()
 
 
-def open():
-    # 创建获取弹幕线程
-    try:
-        _thread.start_new_thread(bilibili, ("BliBli", 0.5,))
-    except:
-        print("Error: 无法启动线程")
+def set_room():
+    # 获取字符串（标题，提示，初始值）
+    room_id = simpledialog.askstring(title='请输入房间号', prompt='请输入房间号：', initialvalue='21089733')
+    if room_id != '':
+        # 创建获取弹幕线程
+        try:
+            _thread.start_new_thread(bilibili, (0.5, str(room_id),))
+        except:
+            print("Error: 启动失败！请检查房间号是否正确")
+
+
+def author():
+    # 弹出对话框
+    messagebox.showinfo(title='关于', message='作者：阿壮Jonson\n日期：2021年2月4日\n微信公众号：科技猫')
 
 
 # tkinter GUI
@@ -86,23 +93,16 @@ window.geometry('500x700')
 # 菜单栏
 menubar = tkinter.Menu(window)
 # Open放在菜单栏中，就是装入容器
-menubar.add_cascade(label='Open')
-# 用tkinter里面自带的quit()函数
-menubar.add_command(label='Exit', command=window.quit)
+menubar.add_cascade(label='设置房间号', command=set_room)
+menubar.add_command(label='关于', command=author)
 # 创建菜单栏完成后，配置让菜单栏menubar显示出来
 window.config(menu=menubar)
 
 # 滚动条
 sc = tkinter.Scrollbar(window)
 sc.pack(side=tkinter.RIGHT, fill=tkinter.Y)
-
 # Listbox控件
 listb = tkinter.Listbox(window, yscrollcommand=sc.set)
-
-frame = Frame(window, width=100, height=80)
-frame.bind("Open", open())
-frame.pack()
-
 # 将部件放置到主窗口中
 listb.pack(side=tkinter.LEFT, fill=tkinter.BOTH, expand=True)
 # 滚动条动，列表跟着动
