@@ -78,7 +78,7 @@ def author():
 window = tkinter.Tk()
 window.title('BiliBli弹幕查看工具')
 window.minsize(300, 500)
-window.geometry('400x600+40+60')
+window.geometry('400x600+250+100')
 
 # 菜单栏
 menubar = tkinter.Menu(window)
@@ -99,7 +99,7 @@ sc.config(command=listb.yview)
 
 # 获取字符串（标题，提示，初始值）
 room_id = simpledialog.askstring(title='请输入房间号', prompt='请输入房间号：'
-                                 , initialvalue='21089733', minvalue=1, parent=window)
+                                 , initialvalue='21089733')
 if room_id is not None:
     # 创建获取弹幕线程
     try:
