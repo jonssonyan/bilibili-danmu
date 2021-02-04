@@ -72,7 +72,7 @@ def bilibili(delay, room_id):
 def set_room():
     # 获取字符串（标题，提示，初始值）
     room_id = simpledialog.askstring(title='请输入房间号', prompt='请输入房间号：', initialvalue='21089733')
-    if room_id != '':
+    if room_id is not None:
         # 创建获取弹幕线程
         try:
             _thread.start_new_thread(bilibili, (0.5, str(room_id),))
