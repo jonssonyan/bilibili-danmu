@@ -104,7 +104,9 @@ frame_b.pack(side=tkinter.BOTTOM)
 # 创建标签
 tkinter.Label(frame_t, text='请输入房间号：', width=10, font=('Arial', 10)).pack(side=tkinter.LEFT)
 # 显示成明文形式
-e1 = tkinter.Entry(frame_t, show=None, width=15, textvariable='21089733', font=('Arial', 10))
+default_text = tkinter.StringVar()
+default_text.set("21089733")
+e1 = tkinter.Entry(frame_t, show=None, width=15, textvariable=default_text, font=('Arial', 10))
 e1.pack(side=tkinter.LEFT)
 
 
