@@ -5,7 +5,11 @@ from tkinter import END, messagebox
 
 import requests
 
+# 全局变量，用于标识线程是否退出
+is_exit = True
 
+
+# B站获取弹幕对象
 class Danmu():
     def __init__(self, room_id):
         # 弹幕url
@@ -59,14 +63,27 @@ class Danmu():
             msg = ''
 
 
-def bilibili(delay, room_id):
+# 线程对象
+def bilibili(room_id):
     # 创建bDanmu实例
     bDanmu = Danmu(room_id)
-    while True:
-        # 暂停防止cpu占用过高
-        time.sleep(delay)
-        # 获取弹幕
-        bDanmu.get_danmu()
+    # 获取弹幕
+    bDanmu.get_danmu()
+
+
+class BilibiliThread(threading.Thread):
+    def __init__(self, room_id=None):
+        threading.Thread.__init__(self)
+        self.room_id = room_id
+
+    # 重写run()方法
+    def run(self):
+        global is_exit
+        while not is_exit:
+            print(self.room_id)
+            bilibili(self.room_id)
+            # 暂停防止cpu占用过高
+            time.sleep(0.5)
 
 
 def author():
@@ -120,8 +137,11 @@ def start_point():
         b1.configure(state=tkinter.DISABLED)
         b2.configure(state=tkinter.NORMAL)
         if room_int is not None:
+            global is_exit
+            is_exit = False
+            t = BilibiliThread()
+            t.room_id = room_int
             # 创建获取弹幕线程
-            t = threading.Thread(target=bilibili, args=(0.5, str(room_int),))
             t.setDaemon(True)
             t.start()
     except ValueError:
@@ -130,10 +150,11 @@ def start_point():
 
 # 停止
 def end_point():
+    global is_exit
+    is_exit = True
     e1.configure(state=tkinter.NORMAL)
     b1.configure(state=tkinter.NORMAL)
     b2.configure(state=tkinter.DISABLED)
-    print('停止')
 
 
 # 创建并放置两个按钮分别触发两种情况
