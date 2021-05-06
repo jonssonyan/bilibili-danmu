@@ -80,7 +80,6 @@ class BilibiliThread(threading.Thread):
     def run(self):
         global is_exit
         while not is_exit:
-            print(self.room_id)
             bilibili(self.room_id)
             # 暂停防止cpu占用过高
             time.sleep(0.5)
