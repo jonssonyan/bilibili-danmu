@@ -87,7 +87,7 @@ class BilibiliThread(threading.Thread):
 
 def author():
     # 弹出对话框
-    messagebox.showinfo(title='关于', message='作者：阿壮Jonson\n日期：2021年2月4日\n微信公众号：科技猫')
+    messagebox.showinfo(title='关于', message='作者：阿壮Jonson\n微信：yzzyz7\n日期：2021年2月4日')
 
 
 # 实例化object，建立窗口window
