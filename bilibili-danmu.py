@@ -97,6 +97,8 @@ window.title('BiliBli弹幕查看工具')
 # 设定窗口的大小(长 * 宽)
 window.minsize(300, 500)
 window.geometry('400x600+250+100')
+# 窗口置顶
+window.wm_attributes('-topmost', 1)
 
 # 菜单栏
 menubar = tkinter.Menu(window)
