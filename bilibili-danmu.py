@@ -43,8 +43,8 @@ class Danmu():
             nickname = content['nickname']
             # 获取发言
             text = content['text']
-            # 获取发言时间
-            timeline = content['timeline']
+            # 获取发言时间 HH:mm:ss
+            timeline = content['timeline'].split(" ")[1]
             # 记录发言
             msg = timeline + ' ' + nickname + ': ' + text
             # 判断对应消息是否存在于日志，如果和最后一条相同则打印并保存
@@ -95,7 +95,7 @@ window = tkinter.Tk()
 # 给窗口的可视化起名字
 window.title('BiliBli弹幕查看工具')
 # 设定窗口的大小(长 * 宽)
-window.minsize(300, 500)
+window.minsize(300, 110)
 window.geometry('400x600+250+100')
 # 窗口置顶
 window.wm_attributes('-topmost', 1)
