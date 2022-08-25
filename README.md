@@ -1,6 +1,6 @@
-# bilibli-danmu
+# Bilibili Danmu
 
-使用Python Tkinter开发一个爬取B站直播弹幕的工具，启动后在弹窗中输入房间号即可，弹幕内容会保存在脚本文件同级目录下的.log扩展名的文件中
+B站直播弹幕工具
 
 # 开发工具
 
@@ -9,8 +9,9 @@
 
 # 注意
 
+- 启动后在弹窗中输入房间号即可，弹幕内容会保存在脚本文件同级目录下的.log扩展名的文件中
 - 不要后台挂代理，不然软件使用时网络有问题
 
-# 界面
+# 演示
 
-![界面](https://img-blog.csdnimg.cn/20210507003447677.png)
+![演示](https://user-images.githubusercontent.com/46235235/186716199-f3ee40ea-4188-4c87-8994-095a25fd46f1.png)
