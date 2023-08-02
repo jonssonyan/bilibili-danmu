@@ -2,9 +2,9 @@
 
 B站直播弹幕工具
 
-# 界面
+# 演示
 
-![界面](https://user-images.githubusercontent.com/46235235/186716199-f3ee40ea-4188-4c87-8994-095a25fd46f1.png)
+![演示](https://user-images.githubusercontent.com/46235235/186716199-f3ee40ea-4188-4c87-8994-095a25fd46f1.png)
 
 # 作者
 
