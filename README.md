@@ -2,7 +2,7 @@
 
 B站直播弹幕工具
 
-# 演示
+# UI展示
 
 ![演示](https://user-images.githubusercontent.com/46235235/186716199-f3ee40ea-4188-4c87-8994-095a25fd46f1.png)
 
