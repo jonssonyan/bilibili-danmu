@@ -1,4 +1,4 @@
-[中文](README.md)
+[English](README.md)
 
 # B站弹幕工具
 

@@ -1,4 +1,4 @@
-[English](README_ZH.md)
+[中文](README_ZH.md)
 
 # Bilibili bullet screen tool
 
