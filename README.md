@@ -4,7 +4,7 @@
 
 B站直播弹幕实时显示工具
 
-## 在线演示
+## 演示
 
 ![B站弹幕工具](https://user-images.githubusercontent.com/46235235/186716199-f3ee40ea-4188-4c87-8994-095a25fd46f1.png)
 

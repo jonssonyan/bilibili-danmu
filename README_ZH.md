@@ -4,7 +4,7 @@
 
 Real time display tool for live streaming barrage on Bilibili
 
-## Live Demo
+## Demo
 
 ![Bilibili bullet screen tool](https://user-images.githubusercontent.com/46235235/186716199-f3ee40ea-4188-4c87-8994-095a25fd46f1.png)
 
