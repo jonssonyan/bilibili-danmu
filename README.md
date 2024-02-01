@@ -1,23 +1,24 @@
-[中文](README_ZH.md)
+[English](README_ZH.md)
 
-# B站弹幕工具
+# Bilibili bullet screen tool
 
-B站直播弹幕实时显示工具
+Real time display tool for live streaming barrage on Bilibili
 
-## 演示
+## Demo
 
-![B站弹幕工具](https://user-images.githubusercontent.com/46235235/186716199-f3ee40ea-4188-4c87-8994-095a25fd46f1.png)
+![Bilibili bullet screen tool](https://user-images.githubusercontent.com/46235235/186716199-f3ee40ea-4188-4c87-8994-095a25fd46f1.png)
 
-## 技术栈
+## Technology stack
 
 - Python 3.7.9
 - Tkinter
 
-## 注意
+## Note
 
-- 启动后在弹窗中输入房间号即可，弹幕内容会保存在脚本文件同级目录下的.log扩展名的文件中
-- 不要后台挂代理，不然软件使用时网络有问题
+- After starting, just enter the room number in the pop-up window. The content of the barrage will be saved in a file
+  with a .log extension in the same directory as the script file.
+- Do not hang a proxy in the background, otherwise there will be network problems when using the software.
 
-## 其他
+## Other
 
-你可以在哔哩哔哩上关注我: https://space.bilibili.com/374864141
+you can contact me at YouTube: https://www.youtube.com/@jonssonyan
